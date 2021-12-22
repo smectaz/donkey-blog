@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ArticleRepository;
 use Knp\DoctrineBehaviors\Model\Sluggable\SluggableTrait;
 use Knp\DoctrineBehaviors\Contract\Entity\SluggableInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article implements SluggableInterface
@@ -25,16 +24,15 @@ class Article implements SluggableInterface
     private $content;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
-    #[Assert\DateTime]
     private $createdDate;
 
-    #[ORM\ManyToOne(targetEntity: author::class, inversedBy: 'articles')]
+    #[ORM\ManyToOne(targetEntity: Author::class, inversedBy: 'articles')]
     private $author;
 
-    #[ORM\ManyToOne(targetEntity: category::class, inversedBy: 'articles')]
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'articles')]
     private $category;
 
-    #[ORM\ManyToOne(targetEntity: commentary::class, inversedBy: 'articles')]
+    #[ORM\ManyToOne(targetEntity: Commentary::class, inversedBy: 'articles')]
     private $commentary;
 
     public function getId(): ?int
