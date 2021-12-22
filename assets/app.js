@@ -11,18 +11,5 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
-//jquery plugin
 
-// assets/app.js
-  // ...
 
-  // loads the jquery package from node_modules
-  import $ from 'jquery';
-  
-  // import the function from greet.js (the .js extension is optional)
-  // ./ (or ../) means to look for a local file
-  import greet from './styles/greet';
-  
-  $(document).ready(function() {
-      $('body').prepend('<h1>'+greet('jill')+'</h1>');
-  });
