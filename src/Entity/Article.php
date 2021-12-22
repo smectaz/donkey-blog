@@ -2,19 +2,23 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
+use Knp\DoctrineBehaviors\Model\Sluggable\SluggableTrait;
+use Knp\DoctrineBehaviors\Contract\Entity\SluggableInterface;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-class Article
+class Article implements SluggableInterface
 {
+    use SluggableTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $Title;
+    private $title;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $content;
@@ -38,14 +42,24 @@ class Article
 
     public function getTitle(): ?string
     {
-        return $this->Title;
+        return $this->title;
     }
 
-    public function setTitle(string $Title): self
+    public function setTitle(string $title): self
     {
-        $this->Title = $Title;
+        $this->title = $title;
 
         return $this;
+    }
+
+    public function getSluggableFields(): array
+    {
+        return ['title'];
+    }
+
+    public function generateSlugValue($values): string
+    {
+        return strtolower(implode('-', $values));
     }
 
     public function getContent(): ?string
