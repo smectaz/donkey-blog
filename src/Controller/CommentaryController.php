@@ -11,7 +11,7 @@ class CommentaryController extends AbstractController
     #[Route('/commentary', name: 'commentary')]
     public function index(): Response
     {
-        return $this->render('commentary/index.html.twig', [
+        return $this->render('commentary/commentary.html.twig', [
             'controller_name' => 'CommentaryController',
         ]);
     }
