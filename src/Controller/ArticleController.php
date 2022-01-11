@@ -17,7 +17,7 @@ class ArticleController extends AbstractController
        
         
 
-        return $this->render('article/index.html.twig', [
+        return $this->render('article/article.html.twig', [
             'controller_name' => 'ArticleController',
             'listeArticles' => $listArticle,
         ]);
