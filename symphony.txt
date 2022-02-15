@@ -1,0 +1,48 @@
+Mission du jour
+# Blog Symfony
+Votre mission du jour / de la semaine.
+Vous devez créer un blog en symfony avec une administration (easyAdmin) protégée par mot de passe, un front SEO friendly et joli. Un systeme de commentaires avec une notification par mail de l’admin. Ainsi qu’une Api (apiPlatform).
+Afin de réussir votre mission, voici un plan des actions à mener. Vous avez accès à toute la doc du cours ainsi que les tutos symfony.com
+Eg https://symfony.com/doc/current/page_creation.html, https://symfony.com/doc/current/the-fast-track/en/index.html
+Quelques étapes clés de votre feuille de route
+1. Créez un projet symfony 6    X
+2. Installez doctrine et configurez le en attributes   X
+3. Créez vos entites   X
+4. Ajoutez des fixtures  X 
+5. Creez les routes fronts suivates :
+    a. ‘’ -> affiche la home avec les derniers articles   X
+    b. ‘/page/2’ -> affiche la page 2 des articles de la home
+    c. ‘/article/slug-de-l-article’ -> affiche l’article demandé
+    d. ‘/category/slug-de-category’ -> affiche la liste des articles de la category
+    e. ‘/category/slug-de-category/page/2’ -> affiche la page 2 de la liste des articles de la category
+Tips. En symfony on dit toujours There is a bundle for that ! Alors jetez un oeil à https://github.com/KnpLabs/KnpPaginatorBundle et https://github.com/KnpLabs/DoctrineBehaviors/blob/master/docs/sluggable.md
+6. (optionnel) Activez swup de symfony/ux
+7. Installez easy admin  X
+8. Créez l’admin de vos 2 entités (category et post) - Pensez à ajouter vos validator (#[Assert\*])
+9. Sécurisez l’admin a l’aide des commandes make:user et make:auth
+10. Ajoutez un formulaire de commentaires sur la page d’un article
+11. Le formulaire de commentaire envoi une notif par mail à l’admin
+12. Installez api plateform
+13. Créez les routes Api pour toutes vos entitées
+14. Séurisez votre API
+15. (optionnel ) Testez https://symfony.com/doc/current/the-fast-track/en/17-tests.html
+SymfonySymfony
+Create your First Page in Symfony (Symfony Docs) (12 ko)
+https://symfony.com/doc/current/page_creation.html
+
+SymfonySymfony
+Symfony 5: The Fast Track (Symfony Docs) (12 ko)
+https://symfony.com/doc/current/the-fast-track/en/index.html
+
+SymfonySymfony
+Testing (Symfony Docs) (12 ko)
+https://symfony.com/doc/current/the-fast-track/en/17-tests.html
+
+KnpLabs/KnpPaginatorBundle
+Website
+http://knplabs.com/en/blog/knp-paginator-reborn
+Stars
+1534
+Ajouté(e) par GitHub
+sluggable.md
+<https://github.com/KnpLabs/DoctrineBehaviors|KnpLabs/DoctrineBehaviors>KnpLabs/DoctrineBehaviors | Ajouté(e) par GitHub
